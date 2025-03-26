@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Macam Macam Gunung Di Indonesia</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    p.description {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    /* Container utama */
+    .cases-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      /* 3 kolom total, 2 baris */
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 20px;
+      grid-template-areas:
+        "img1 img1 img2"
+        "img3 img4 img5";
+    }
+
+    /* Item grid (tiap kotak) */
+    .case-item {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+      display: flex;
+      flex-direction: column; /* Supaya caption bisa di bawah gambar */
+    }
+    .case-item:hover {
+      transform: scale(1.02);
+    }
+
+    /* Supaya gambar benar-benar mengisi kotak, kita tetapkan tinggi untuk setiap item */
+    .item1 {
+      grid-area: img1;
+      height: 300px; /* melebar 2 kolom, bisa diatur sesuai selera */
+    }
+    .item2 {
+      grid-area: img2;
+      height: 300px; /* kolom kanan atas */
+    }
+    .item3 {
+      grid-area: img3;
+      height: 200px;
+    }
+    .item4 {
+      grid-area: img4;
+      height: 200px;
+    }
+    .item5 {
+      grid-area: img5;
+      height: 200px;
+    }
+
+    /* Bungkus gambar agar object-fit bisa bekerja penuh */
+    .image-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      flex: 1; /* agar wrapper memenuhi ruang case-item */
+    }
+    .image-wrapper img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* isi seluruh kotak, crop jika perlu */
+      display: block;
+    }
+
+    /* Caption di bawah foto */
+    .caption {
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gunung di Indonesia</h1>
+  <p class="description">
+    Ini adalah beberapa gunung yang terkenal di Indonesia, yang biasa menjadi incaran para pendaki.
+  </p>
+
+  <div class="cases-container">
+    <!-- Foto kiri atas (melebar 2 kolom) -->
+    <div class="case-item item1">
+      <div class="image-wrapper">
+        <img src="bromo.jpeg" alt="Foto Gunung Bromo" />
+      </div>
+      <div class="caption">Gunung Bromo</div>
+    </div>
+
+    <!-- Foto kanan atas -->
+    <div class="case-item item2">
+      <div class="image-wrapper">
+        <img src="sindoro.jpeg" alt="Foto Gunung Sindoro" />
+      </div>
+      <div class="caption">Gunung Sindoro</div>
+    </div>
+
+    <!-- Foto baris kedua (kolom 1) -->
+    <div class="case-item item3">
+      <div class="image-wrapper">
+        <img src="andong.jpeg" alt="Foto Gunung Andong" />
+      </div>
+      <div class="caption">Gunung Andong</div>
+    </div>
+
+    <!-- Foto baris kedua (kolom 2) -->
+    <div class="case-item item4">
+      <div class="image-wrapper">
+        <img src="merbabu.jpeg" alt="Foto Gunung Merbabu" />
+      </div>
+      <div class="caption">Gunung Merbabu</div>
+    </div>
+
+    <!-- Foto baris kedua (kolom 3) -->
+    <div class="case-item item5">
+      <div class="image-wrapper">
+        <img src="prau.jpeg" alt="Foto Gunung Prau" />
+      </div>
+      <div class="caption">Gunung Prau</div>
+    </div>
+  </div>
+</body>
+</html>
